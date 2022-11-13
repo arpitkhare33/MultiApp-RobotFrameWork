@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.8 on win32)" generated="20221113 08:47:27.800" rpa="false" schemaversion="3">
+<suite id="s1" name="End To End" source="C:\Development\robot-scripts\front-back-office\tests\EndToEnd\End_To_End.robot">
+<test id="s1-t1" name="Should be able to access both sites" line="14">
+<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221113 08:47:28.066" level="INFO">Opening browser 'edge' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20221113 08:47:28.066" endtime="20221113 08:47:29.404"/>
+</kw>
+<status status="PASS" starttime="20221113 08:47:28.066" endtime="20221113 08:47:29.404"/>
+</kw>
+<kw name="Go to Landing Page" library="FrontOfficeApp">
+<kw name="Navigate To" library="FrontOffice.Landing">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${FRONT_OFFICE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221113 08:47:29.406" level="INFO">Opening url 'https://automationplayground.com/front-office/'</msg>
+<status status="PASS" starttime="20221113 08:47:29.406" endtime="20221113 08:48:00.570"/>
+</kw>
+<status status="PASS" starttime="20221113 08:47:29.406" endtime="20221113 08:48:00.570"/>
+</kw>
+<kw name="Verify Page Loaded" library="FrontOffice.Landing">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221113 08:48:05.597" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221113 08:48:00.571" endtime="20221113 08:48:05.597"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${FRONT_OFFICE_LANDING_NAVIGATION_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20221113 08:48:05.597" endtime="20221113 08:48:05.613"/>
+</kw>
+<status status="PASS" starttime="20221113 08:48:00.571" endtime="20221113 08:48:05.613"/>
+</kw>
+<status status="PASS" starttime="20221113 08:47:29.405" endtime="20221113 08:48:05.613"/>
+</kw>
+<kw name="Go to Landing Page" library="BackOfficeApp">
+<kw name="Navigate To" library="BackOffice.Landing">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BACK_OFFICE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221113 08:48:05.613" level="INFO">Opening url 'https://automationplayground.com/back-office/'</msg>
+<status status="PASS" starttime="20221113 08:48:05.613" endtime="20221113 08:48:08.979"/>
+</kw>
+<status status="PASS" starttime="20221113 08:48:05.613" endtime="20221113 08:48:08.979"/>
+</kw>
+<kw name="Verify Page Loaded" library="BackOffice.Landing">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LANDING_NAVIGATION_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 08:48:08.980" endtime="20221113 08:48:08.994"/>
+</kw>
+<status status="PASS" starttime="20221113 08:48:08.979" endtime="20221113 08:48:08.994"/>
+</kw>
+<status status="PASS" starttime="20221113 08:48:05.613" endtime="20221113 08:48:08.994"/>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221113 08:48:08.995" endtime="20221113 08:48:11.154"/>
+</kw>
+<status status="PASS" starttime="20221113 08:48:08.995" endtime="20221113 08:48:11.154"/>
+</kw>
+<doc>This is test 1</doc>
+<tag>test1</tag>
+<status status="PASS" starttime="20221113 08:47:28.050" endtime="20221113 08:48:11.154"/>
+</test>
+<doc>This is my end to end suit</doc>
+<status status="PASS" starttime="20221113 08:47:27.800" endtime="20221113 08:48:11.154"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">test1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="End To End">End To End</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221113 08:47:28.050" level="ERROR">Error in file 'C:\Development\robot-scripts\front-back-office\Resources\BackOffice\BackOfficeApp.robot' on line 3: Resource file 'PO\TopNav.robot' does not exist.</msg>
+</errors>
+</robot>
